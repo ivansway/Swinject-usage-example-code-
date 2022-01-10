@@ -42,13 +42,15 @@ class StartViewController: UIViewController {
     }
     
     @objc private func openEndViewController() {
-        // не боимся !, все норм, так и статья говорит (на которую ссылается дока) и в одном из прошлых моих проектов сделано
+        // не боимся !, все норм, так и статья говорит (на которую ссылается дока) и в одном из прошлых моих проектов так сделано
         let endViewController = Assembler.sharedAssembler.resolver.resolve(EndViewController.self)!
+        // обращаемся к нужным свойствам 
+        let _ = endViewController.someString
         navigationController?.pushViewController(endViewController, animated: true)
     }
     
     @objc private func getUserInfo() {
-        // не боимся !, все норм, так и статья говорит (на которую ссылается дока) и в одном из прошлых моих проектов сделано
+        // не боимся !, все норм, так и статья говорит (на которую ссылается дока) и в одном из прошлых моих проектов так сделано
         let _ = Assembler.sharedAssembler.resolver.resolve(GetUserInfo.self)!
     }
 }
