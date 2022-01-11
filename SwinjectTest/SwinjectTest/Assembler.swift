@@ -11,7 +11,11 @@ import Swinject
 extension Assembler {
     static let sharedAssembler: Assembler = {
         let container = Container()
-        let assembler = Assembler([DateServiceAssembly(), EndViewControllerAssembly()], container: container)
+        let assembler = Assembler([AppDelegate(),
+                                   AppAssembly(),
+                                   DateServiceAssembly(),
+                                   FetcherAssembly(),
+                                   DataFetcherAssembly()], container: container)
         return assembler
     }()
 }

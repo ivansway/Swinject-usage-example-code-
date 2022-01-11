@@ -24,6 +24,21 @@
             </objects>
             <point key="canvasLocation" x="738" y="80"/>
         </scene>
+        <!--End View Controller-->
+        <scene sceneID="hS8-Yn-VwL">
+            <objects>
+                <viewController id="LJd-eD-POh" customClass="EndViewController" customModule="SwinjectTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jcj-BQ-jDh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dUv-zE-7H2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zos-na-l4g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="80"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="806-62-3oD">
             <objects>
@@ -36,11 +51,12 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TYv-GL-mJF"/>
+                        <segue destination="LJd-eD-POh" kind="presentation" id="SZP-kz-TAm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szC-An-OaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108.69565217391305" y="79.6875"/>
+            <point key="canvasLocation" x="-28" y="80"/>
         </scene>
     </scenes>
     <resources>

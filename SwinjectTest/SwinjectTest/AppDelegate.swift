@@ -7,9 +7,32 @@
 
 import UIKit
 import Swinject
+import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, Assembly {
+    
+    var window: UIWindow?
+    var coordinator: Coordinator!
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+
+        let container = NSPersistentContainer(name: "Title")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error {
+
+                fatalError("Unresolved error, \((error as NSError).userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    func assemble(container: Container) {
+        let navigationController = window?.rootViewController as? UINavigationController ?? UINavigationController()        
+        container.register(Coordinator.self) { _ in
+            return Coordinator(container: container, navController: navigationController)
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true
